@@ -13,8 +13,8 @@ export const fillEmptyColumns = (columns: [], start: number, end: number) => {
   const filledColumns = columns.slice(0);
 
   // 1. 첫날 이전 공백 채우기
-  const startDay = dayjs(start).get("day"); // 화 2
-  for (let i = 1; i <= startDay; i += 1) {
+  const startDay: number = dayjs(start).get("day"); // 화 2
+  for (let i: number = 1; i <= startDay; i += 1) {
     const date = dayjs(start).subtract(i, "day");
     filledColumns.unshift(date);
   }
@@ -22,7 +22,7 @@ export const fillEmptyColumns = (columns: [], start: number, end: number) => {
   // ["10.30", "10.31", "11.1", ..., "11.30"]
 
   // 2. 마지막날 이후 공백 채우기
-  const endDay = dayjs(end).get("day");
+  const endDay: number = dayjs(end).get("day");
   /**
     0 -> 6
     1 -> 5
